@@ -1,3 +1,13 @@
+function main(){
+
+    var a = [prompt("Digite o primeiro nome"), prompt("Digite o segundo nome"), prompt("Digite o terceiro nome")];
+
+
+    invert(a).forEach(function (element) {
+        console.log(element);
+    }
+}
+
 
 /**
  * Recebe um array com os nomes de pessoas e retorna um array invertido
