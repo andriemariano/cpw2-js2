@@ -90,14 +90,15 @@ function mean(grades){
  */
 function isApproved(mean){
 
-    var situacao = mean >= 7 ? "aprovado" : "reprovado";
+    var mean;
 
     // TODO
     // 2.1) Faça um programa que leia o nome e as três notas de uma disciplina de um aluno e ao final escreva
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return "Você foi " + situacao + "!";
+    return mean >= 7 ? "aprovado" : "reprovado";
+    
 }
 
 /**
@@ -108,17 +109,39 @@ function isApproved(mean){
  */
 function wide(strDate){
 
+    // Verificar se a data possui o formato correto (dd/mm/aaaa)
+    if (strDate.indexOf("/") === -1) {
+        return "";
+    }
+
+    var partes = strDate.split("/");
+
+    // Verificar se há três partes após a divisão
+    if (partes.length !== 3) {
+        return "";
+    }
+
     var partes = strDate.split("/");
     var dia = partes[0];
     var mes = partes[1];
     var ano = partes[2];
 
+    // Verificar se os valores de dia, mês e ano são válidos
+    if (isNaN(dia) || isNaN(mes) || isNaN(ano)) {
+        return "";
+    }
+
+    
     var meses = [
         "janeiro", "fevereiro", "março",
         "abril", "maio", "junho",
         "julho", "agosto", "setembro",
         "outubro", "novembro", "dezembro"
     ];
+
+    if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 0) {
+        return "";
+    }
 
     var mesExtenso = meses[parseInt(mes) - 1];
 
