@@ -1,13 +1,8 @@
-function main(){
-
-    var a = [prompt("Digite o primeiro nome"), prompt("Digite o segundo nome"), prompt("Digite o terceiro nome")];
-
-
-    invert(a).forEach(function (element) {
-        console.log(element);
-    }
+function main() {
+    var media = 10; // Defina a média aqui
+    var resultado = isApproved(media);
+    document.write(resultado);
 }
-
 
 /**
  * Recebe um array com os nomes de pessoas e retorna um array invertido
@@ -17,13 +12,15 @@ function main(){
  */
 function invert(people){
 
+    var invertedArray = people.reverse();
+    
     // TODO
     // 1) Peça ao usuário para digitar vários nomes. Exiba na tela
     // todos os nomes digitados, porém de maneira invertida (do último para o primeiro).
     // Uma dica, você pode utilizar a função prompt para permitir que o usuário digite os
     // nomes dos usuários.
 
-    return [];
+    return  invertedArray;
 }
 
 /**
@@ -34,12 +31,18 @@ function invert(people){
  */
 function mean(grades){
 
+    var soma = 0;
+    for (var i = 0; i < grades.length; i++) {
+        soma += grades[i];
+    }
+
+
     // TODO
     // 2) Faça um programa que leia o nome e as três notas de uma disciplina de um aluno e ao final escreva
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return 0;
+    return soma / grades.length;
 }
 
 /**
@@ -50,12 +53,14 @@ function mean(grades){
  */
 function isApproved(mean){
 
+    var situacao = mean >= 7 ? "aprovado" : "reprovado";
+
     // TODO
     // 2.1) Faça um programa que leia o nome e as três notas de uma disciplina de um aluno e ao final escreva
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return "";
+    return "Você foi " + situacao + "!";
 }
 
 /**
