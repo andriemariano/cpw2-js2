@@ -31,10 +31,12 @@ function main() {
     document.write("Situação: " + aprovado);
 
     document.write("<br> <br>");
+    
     //terceiro programa
     document.write(isApproved(10));
     
     document.write("<br> <br>");
+    
     //quarto programa
     document.write(wide(prompt("Digite uma data no formato dd/mm/aaaa:")));
 }
