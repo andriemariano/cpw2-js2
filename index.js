@@ -1,5 +1,5 @@
 function main() {
-
+    //primeiro programa
     var a = [
         prompt("Digite o primeiro nome"),
         prompt("Digite o segundo nome"),
@@ -12,7 +12,9 @@ function main() {
     invertedNames.forEach(function (element) {
         document.write(element + "<br>");
     });
+    document.write("<br>");
 
+    //segundo programa
     var nome = prompt("Digite o nome do aluno:");
     var notas = [];
 
@@ -26,10 +28,14 @@ function main() {
 
     document.write("Nome do aluno: " + nome + "<br>");
     document.write("Média: " + media.toFixed(2) + "<br>");
-    console.log("Situação: " + aprovado);
+    document.write("Situação: " + aprovado);
 
-    isApproved(10);
+    document.write("<br> <br>");
+    //terceiro programa
+    document.write(isApproved(10));
     
+    document.write("<br> <br>");
+    //quarto programa
     document.write(wide("03/03/2022"));
 }
 
