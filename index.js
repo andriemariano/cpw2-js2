@@ -33,7 +33,7 @@ function main() {
     document.write("<br> <br>");
     
     //terceiro programa
-    document.write(isApproved(10));
+    document.write(isApproved(prompt("Informe a média:")));
     
     document.write("<br> <br>");
     
