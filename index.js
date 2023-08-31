@@ -1,7 +1,36 @@
 function main() {
-    var media = 10; // Defina a média aqui
-    var resultado = isApproved(media);
-    document.write(resultado);
+
+    var a = [
+        prompt("Digite o primeiro nome"),
+        prompt("Digite o segundo nome"),
+        prompt("Digite o terceiro nome")
+    ];
+
+    var invertedNames = invert(a);
+
+    // Exibir nomes invertidos na tela
+    invertedNames.forEach(function (element) {
+        document.write(element + "<br>");
+    });
+
+    var nome = prompt("Digite o nome do aluno:");
+    var notas = [];
+
+    for (var i = 1; i <= 3; i++) {
+        var nota = parseFloat(prompt("Digite a nota " + i + " do aluno:"));
+        notas.push(nota);
+    }
+
+    var media = mean(notas);
+    var aprovado = media >= 7 ? "aprovado" : "reprovado";
+
+    document.write("Nome do aluno: " + nome + "<br>");
+    document.write("Média: " + media.toFixed(2) + "<br>");
+    console.log("Situação: " + aprovado);
+
+    isApproved(10);
+    
+    document.write(wide("03/03/2022"));
 }
 
 /**
@@ -71,13 +100,27 @@ function isApproved(mean){
  */
 function wide(strDate){
 
+    var partes = strDate.split("/");
+    var dia = partes[0];
+    var mes = partes[1];
+    var ano = partes[2];
+
+    var meses = [
+        "janeiro", "fevereiro", "março",
+        "abril", "maio", "junho",
+        "julho", "agosto", "setembro",
+        "outubro", "novembro", "dezembro"
+    ];
+
+    var mesExtenso = meses[parseInt(mes) - 1];
+
     // TODO
     // 3) Faça um script que receba uma data no formato “dd/mm/aaaa” e escreva a data por extenso,
     // por exemplo, de "03/03/2022" para "03 de março de 2022". Dica: use a função
     // “split” de uma string que quebra a string em pedaços dado um separador como argumento da função.
     // Nesse caso, o separador é a barra (/) da data.
 
-    return "";
+    return dia + " de " + mesExtenso + " de " + ano;
 }
 
 // Trecho utilizado pelos testes
