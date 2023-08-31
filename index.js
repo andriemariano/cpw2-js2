@@ -36,7 +36,7 @@ function main() {
     
     document.write("<br> <br>");
     //quarto programa
-    document.write(wide("03/03/2022"));
+    document.write(wide(prompt("Digite uma data no formato dd/mm/aaaa:")));
 }
 
 /**
